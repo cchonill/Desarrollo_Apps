@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<html>
+<body>
+<head><script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+
+        <div class="app">
+		<h1>Welcome</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+                <h2>Calculo del Indice de Masa Corporal</h2>
+	
+		<form name="form1" action="" method="POST">
+		    <table>	
+                        <tr><td>Nombres:</td> <td><input type="text" name="nomb" id="nomb"></td></tr>
+  			<tr><td>Apellidos:</td><td> <input type="text" name="apll"id="apll"></td></tr>
+			<tr><td>Edad:</td> <td><input type="text" name="edad" id="edad"></td></tr>
+			<tr><td>Sexo: </td><td><select name="sexo"><option value="M" id="sexo">M</option><option value="F">F</option></select></td></tr>
+			<tr><td>Peso (Kg):</td> <td><input type="text" name="peso" id="peso"></td></tr>
+			<tr><td>Altura (m):</td> <td><input type="text" name="altura" id="altura"></td></tr>
+			<tr><td>Cedula:</td><td> <input type="text" name="cedl" id="cedl"></td></tr>
+  			<tr><td><input type="button" onclick="myfunction()" value="Registrar"></td></tr>
+                     </table>
+       		</form>
+<script>
+function myfunction() 
+{
+var a=0;
+var formData = {nomb:$('#nomb').val(),apll:$('#apll').val(),edad:$('#edad').val(),sexo:$('#sexo').val(),peso:$('#peso').val(),altura:$('#altura').val(),cedl:$('#cedl').val()};
+$.ajax({
+    url : 'http://programacion0991.comli.com/recibir.php',
+    type: 'POST',
+    dataType: 'json',
+    data : formData,
+    success: function(data)
+    {  
+       
+        //data - response from server
+            
+       
+},
+   
+});
+}
+</script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
